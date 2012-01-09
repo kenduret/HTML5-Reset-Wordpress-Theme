@@ -10,13 +10,11 @@ if ( is_readable($locale_file) )
 add_theme_support('automatic-feed-links');
 	
 // Load jQuery
-if ( !function_exists(html5_scripts) ) {
-	function html5_scripts() {
-		wp_enqueue_script('jquery');
-	}
+// Load jQuery
+function html5_scripts() {
+	wp_enqueue_script('jquery');
 }
 add_action('wp_enqueue_scripts', 'html5_scripts');
-}
 
 // Clean up the <head>
 remove_action('wp_head', 'wp_generator');
