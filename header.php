@@ -115,6 +115,8 @@
 	<div id="page-wrap"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
 
 		<header id="header">
-			<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
+                    <?php if(is_front_page() || is_home() || is_404() || is_search()) {echo '<h1>';}else echo '<h2>'; ?>
+			<a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a>
+                    <?php if(is_front_page() || is_home() || is_404() || is_search()) {echo '</h1>';}else echo '</h2>'; ?>
 			<div class="description"><?php bloginfo('description'); ?></div>
 		</header>
